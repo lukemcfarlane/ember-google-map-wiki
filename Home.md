@@ -2,8 +2,8 @@
 <img src="https://raw.githubusercontent.com/huafu/ember-google-map/master/icon.png" align="right" width="150" height="150">
 
 
-EmberJS Google Map help index
-=============================
+EmberJS Google Map
+==================
 
 #### [[Installation]]
 * [[Requirements|Installation#requirements]]
