@@ -33,3 +33,7 @@
 #### FAQ
 * Why `{{google-map markers=m lat=m.firstObject.lat...}}` fails?
 * _complete with bugs that have been reported so far_
+
+#### About
+* Author
+* Contributors
