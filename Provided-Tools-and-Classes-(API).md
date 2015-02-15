@@ -57,27 +57,23 @@ Any drawable object (also called _overlays_ by Google) of the map has its corres
 - Google Maps: [google.maps.Marker](https://developers.google.com/maps/documentation/javascript/reference#Marker)
 - Component property: **`markers`**
 
-<img align="right" src="assets/info-window.png" height="80">
 #### Info Windows
-
+<img align="right" src="assets/info-window.png" height="80">
 - Google Maps: [google.maps.InfoWindow](https://developers.google.com/maps/documentation/javascript/reference#InfoWindow)
 - Component property: **`infoWindows`**
 
-<img align="right" src="assets/circle.png" height="80">
 #### Circles
-
+<img align="right" src="assets/circle.png" height="80">
 - Google Maps: [google.maps.Circle](https://developers.google.com/maps/documentation/javascript/reference#Circle)
 - Component property: **`circles`**
 
-<img align="right" src="assets/polyline.png" height="80">
 #### Polyline
-
+<img align="right" src="assets/polyline.png" height="80">
 - Google Maps: [google.maps.Polyline](https://developers.google.com/maps/documentation/javascript/reference#Polyline)
 - Component property: **`polylines`**
 
-<img align="right" src="assets/polygon.png" height="80">
 #### Polygon
-
+<img align="right" src="assets/polygon.png" height="80">
 - Google Maps: [google.maps.Polygon](https://developers.google.com/maps/documentation/javascript/reference#Polygon)
 - Component property: **`polygons`**
 
