@@ -1,2 +1,1 @@
----
-**[EmberJS Google Map addon](huafu.github.io/#/ember?name=ember-google-map)** - _by Huafu_ ([@huafu_g](https://twitter.com/huafu_g))
+<img src="https://raw.githubusercontent.com/huafu/ember-google-map/master/icon.png" width="20" height="20" valign="middle"> **[EmberJS Google Map addon](huafu.github.io/#/ember?name=ember-google-map)** - _by Huafu_ ([@huafu_g](https://twitter.com/huafu_g)) <img src="https://avatars2.githubusercontent.com/u/1162602?v=3&s=20" width="20" height="20" valign="middle">
