@@ -1,5 +1,3 @@
-<img src="https://raw.githubusercontent.com/huafu/ember-google-map/master/icon.png" align="right" width="64" height="64">
-
 ## Requirements
 
 This addon requires EmberJS `1.9` or above. If you want to use it with below versions of EmberJS, you'll have to use a version of this addon below `0.0.14`.
