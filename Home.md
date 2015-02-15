@@ -1,5 +1,5 @@
 <img src="https://nodei.co/npm/ember-google-map.png?downloadRank=true&stars=true">
-<img src="https://raw.githubusercontent.com/huafu/ember-google-map/master/icon.png" align="right" width="150" height="150">
+<img src="assets/icon.png" align="right" width="150" height="150">
 
 
 EmberJS Google Map
