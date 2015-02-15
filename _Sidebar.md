@@ -1,4 +1,4 @@
-- [[Index|home]]
+- [[Home]]
 - [[Installation]]
 - [[Configuration]]
 - [[Provided Tools and Classes (API)]]
