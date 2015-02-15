@@ -14,7 +14,7 @@ EmberJS Google Map
 * [[Lazy loading|Configuration#lazy-loading]]
 * [[Loading additional Google libraries|Configuration#loading-additional-google-libraries]]
 
-#### [[Provided Tools and Classes (API)|api]]
+#### [[Provided Tools and Classes (API)]]
 * Main `{{google-map}}` component
     - Basic properties
     - Google options as properties
@@ -29,16 +29,16 @@ EmberJS Google Map
     - Listening to Google events
     - Accessing the Google map object (not recommended)
 
-#### [[Examples|examples]]
+#### [[Examples]]
 * Basic: map with a given zoom and position
 * Adding markers with info-windows
 * Adding poly-lines
 * Listening and answering Google events
 
-#### [[FAQ|faq]]
+#### [[FAQ]]
 * Why `{{google-map markers=m lat=m.firstObject.lat...}}` fails?
 * _complete with bugs that have been reported so far_
 
-#### [[About|about]]
+#### [[About]]
 * Author
 * Contributors
