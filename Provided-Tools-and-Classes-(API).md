@@ -51,9 +51,9 @@ This is valid for any [[view|Provided-Tools-and-Classes-(API)#views]] correspond
 
 Any drawable object (also called _overlays_ by Google) of the map has its corresponding array property on the component. Here are the possible things you can draw on the map (and track updates):
 
-<img align="right" src="wiki/assets/marker.png" height="80">
-#### Markers
 
+#### Markers
+<img align="right" src="assets/marker.png" height="80">
 - Google Maps: [google.maps.Marker](https://developers.google.com/maps/documentation/javascript/reference#Marker)
 - Component property: **`markers`**
 
