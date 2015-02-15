@@ -1,1 +1,7 @@
 - [[Index|home]]
+- [[Installation|install]]
+- [[Configuration|config]]
+- [[Provided Tools and Classes (API)|api]]
+- [[Examples|examples]]
+- [[FAQ|faq]]
+- [[About|about]]
