@@ -1,16 +1,18 @@
-![EmberJS Google Map addon](https://raw.githubusercontent.com/huafu/ember-google-map/master/icon-64.png) EmberJS Google Map help index
+<img src="https://nodei.co/npm/ember-google-map.png?downloadRank=true&stars=true">
+<img src="https://raw.githubusercontent.com/huafu/ember-google-map/master/icon.png" align="right" width="150" height="150">
+
+
+EmberJS Google Map help index
 =============================
 
-[![NPM](https://nodei.co/npm/ember-google-map.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ember-google-map/)
+#### [[Installation]]
+* [[Requirements|Installation#requirements]]
+* [[Install the addon|Installation#install-the-addon]]
 
-#### [[Installation|install]]
-* [[Requirements|install#requirements]]
-* [[Install the addon|install#install-the-addon]]
-
-#### [[Configuration|config]]
-* [[Google API key or Client ID|config#google-api-key-or-client-id]]
-* [[Lazy loading|config#lazy-loading]]
-* [[Loading additional Google libraries|config#loading-additional-google-libraries]]
+#### [[Configuration]]
+* [[Google API key or Client ID|Configuration#google-api-key-or-client-id]]
+* [[Lazy loading|Configuration#lazy-loading]]
+* [[Loading additional Google libraries|Configuration#loading-additional-google-libraries]]
 
 #### [[Provided Tools and Classes (API)|api]]
 * Main `{{google-map}}` component
