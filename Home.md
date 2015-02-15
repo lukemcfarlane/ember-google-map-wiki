@@ -4,13 +4,13 @@
 [![NPM](https://nodei.co/npm/ember-google-map.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ember-google-map/)
 
 #### [[Installation|install]]
-* Requirements
-* Install the addon
+* [[Requirements|install#requirements]]
+* [[Install the addon|install#install-the-addon]]
 
 #### [[Configuration|config]]
-* Google API key or Client ID
-* Lazy loading
-* Loading additional Google libraries
+* [[Google API key or Client ID|config#google-api-key-or-client-id]]
+* [[Lazy loading|config#lazy-loading]]
+* [[Loading additional Google libraries|config#loading-additional-google-libraries]]
 
 #### [[Provided Tools and Classes (API)|api]]
 * Main `{{google-map}}` component
