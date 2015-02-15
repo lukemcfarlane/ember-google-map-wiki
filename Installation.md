@@ -1,6 +1,4 @@
-Installation
-============
-
+<img src="https://raw.githubusercontent.com/huafu/ember-google-map/master/icon.png" align="right" width="64" height="64">
 
 ## Requirements
 
