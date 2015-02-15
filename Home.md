@@ -15,15 +15,15 @@ EmberJS Google Map
 * [[Loading additional Google libraries|Configuration#loading-additional-google-libraries]]
 
 #### [[Provided Tools and Classes (API)]]
-* Main `{{google-map}}` component
+* [[Main `{{google-map}}` component|Provided-Tools-and-Classes-(API)#main-google-map-component]]
     - Basic properties
     - Google options as properties
     - Defining objects to draw
-* Controllers
+* [[Controllers|Provided-Tools-and-Classes-(API)#controllers]]
     - Array controllers
     - Associated object controllers (item controllers)
     - Customising the path to `lat`, `lng`, ...
-* Views
+* [[Views|Provided-Tools-and-Classes-(API)#views]]
     - All views
     - Creating an `InfoWindow` template
     - Listening to Google events
