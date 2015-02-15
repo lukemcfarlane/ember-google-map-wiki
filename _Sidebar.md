@@ -1,7 +1,7 @@
 - [[Index|home]]
 - [[Installation]]
 - [[Configuration]]
-- [[Provided Tools and Classes (API)|api]]
+- [[Provided Tools and Classes (API)]]
 - [[Examples]]
 - [[FAQ]]
 - [[About]]
