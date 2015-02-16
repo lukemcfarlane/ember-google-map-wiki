@@ -1,6 +1,6 @@
 ### Introduction
 
-It's not really a configuration, but a required step before you can ever see the map. As explained in the Google Maps documentation, the map requires that you define the size of the canvas. So you need to add one css rule:
+As explained in the Google Maps documentation, before you can see the map you must define the size of the canvas in which the map is displayed. You need to add one css rule which sets the height and width of the canvas:
 
 ```css
 .map-canvas {
@@ -9,7 +9,7 @@ It's not really a configuration, but a required step before you can ever see the
 }
 ```
 
-All configurations described below are done in the `config/environment.js` of your application, in a `googleMap` property of `ENV`:
+All configuration options described below must be defined in the `config/environment.js` of your application, in a `googleMap` property of `ENV`:
 
 ```js
 ENV.googleMap = {
@@ -19,7 +19,7 @@ ENV.googleMap = {
 
 ## Google API key or Client ID
 
-* Google Map doesn't require an API key to be used, tho Google recommand to create and use one. To create a new API key, go [there](https://developers.google.com/maps/documentation/javascript/tutorial#api_key). Then you can use it by defining an **`apiKey`** property of the [[configuration|Configuration#introduction]].
+* Google Map doesn't require that an API key to be used, but Google recommends creating and using one. To create a new API key, go to [this link](https://developers.google.com/maps/documentation/javascript/tutorial#api_key). Once you have obtained an API key you will be able to use it by defining an **`apiKey`** property within the [[configuration|Configuration#introduction]].
 
 * Using [Google Maps API for Work](https://developers.google.com/maps/documentation/business/)? Then you do not need an API key anymore, but a [client ID](https://developers.google.com/maps/documentation/business/clientside/#client_id). As for API key, you would put this one in the [[configuration|Configuration#introduction]], but in a **`clientId`** property.
 
