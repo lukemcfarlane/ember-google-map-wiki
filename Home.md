@@ -27,7 +27,7 @@ EmberJS Google Map
 * [[Controllers|Provided-Tools-and-Classes-(API)#controllers]]
     - [[Introduction|Provided-Tools-and-Classes-(API)#introduction-1]]
     - [[Available controllers|Provided-Tools-and-Classes-(API)#available-controllers]]
-    - [[Example use-case: custom `lat` and `lng` property names|Provided-Tools-and-Classes-(API)#example-use-case-custom-lat-and-lng-property-names]
+    - [[Example use-case: custom `lat` and `lng` property names|Provided-Tools-and-Classes-(API)#example-use-case-custom-lat-and-lng-property-names]]
 * [[Views|Provided-Tools-and-Classes-(API)#views]]
     - [[Introduction|Provided-Tools-and-Classes-(API)#introduction-2]]
     - [[Available views|Provided-Tools-and-Classes-(API)#available-views]]
