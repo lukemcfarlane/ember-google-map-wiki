@@ -26,9 +26,9 @@ ENV.googleMap = {
 
 ## Lazy loading
 
-By default, the Google Maps library will load automatically when your application starts. If you prefer to load it only the first time a map is required, you can then disable the auto-load by defining a **`lazyLoad`** property in the [[configuration|Configuration#introduction]] with value `true`.
+By default, the Google Maps library will load automatically when your application starts. If you prefer to defer loading it until the first time a map is required, then you can disable auto-loading by defining a **`lazyLoad`** property in the [[configuration|Configuration#introduction]] and setting **`lazyLoad`** to  `true`.
 
-You'll then need, in each route _(or parent, sub-parent, ... route)_ having a template using the `{{google-map}}` component, to load the library. To do so, a helper method **`loadGoogleMap`** has been injected in all routes:
+If you are using lazy-loading then you'll need to load the Google Maps library in each route _(or parent, sub-parent, ... route)_ that has a template using the `{{google-map}}` component. A helper method **`loadGoogleMap`** has been injected in all routes so that you can load the library:
 
 ```js
 export default Ember.Route.extend({
@@ -38,7 +38,7 @@ export default Ember.Route.extend({
 });
 ```
 
-It'll return a promise which will resolve to whatever you give as parameter. So if you need to still have your model loaded for example, do like this:
+The **`loadGoogleMap`** method will return a promise which will resolve to whatever you give as parameter. So, for example, if you need to load the Google Maps library and still have your model loaded, you can do the following:
 
 ```js
 export default Ember.Route.extend({
