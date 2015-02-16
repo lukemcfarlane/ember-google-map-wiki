@@ -53,9 +53,9 @@ export default Ember.Route.extend({
 
 ## Loading additional Google libraries
 
-Google Maps API provide the ability to load many more tools packaged as libraries. See the full list of them [there](https://developers.google.com/maps/documentation/javascript/libraries).
+The Google Maps API provides the ability to load many more tools packaged as libraries. See the full list of libraries [here](https://developers.google.com/maps/documentation/javascript/libraries).
 
-Adding additional libraries to be loaded with the Google Maps SDK is as simple as adding them to a **`libraries`** property of the [[configuration|Configuration#introduction]]. For example if you need to load the `places` and `geometry` libraries, to like this:
+Adding additional libraries to be loaded alongside the Google Maps SDK is as simple as adding them to the **`libraries`** property of the [[configuration|Configuration#introduction]]. For example if you need to load the `places` and `geometry` libraries as well, add them to the **`libraries`** property as follows:
 
 ```js
   // ...
