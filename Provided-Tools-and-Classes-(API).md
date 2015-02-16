@@ -56,41 +56,118 @@ Any drawable object (also called _overlay_ by Google) of the map has its corresp
 - Google type: [google.maps.Marker](https://developers.google.com/maps/documentation/javascript/reference#Marker)
 - Component property: **`markers`**
 - Events: **`click`**, **`dblclick`**, **`drag`**, **`dragend`**, **`dragstart`**, **`mousedown`**, **`mouseout`**, **`mouseover`**, **`mouseup`** and **`rightclick`**
+- Special component properties:
+    - **`markerController`**: name of the controller to use for each marker, must extend `google-map/marker` controller
+    - **`markerViewClass`**: name or class of the view to use for each marker, must extend `google-map/marker` view
+    - **`markerInfoWindowTemplateName`**: name of the template to use for all markers' info-window
+    - **`markerHasInfoWindow`**: whether all marker with undefined `hasInfoWindow` should have an info-window or not
 
-Each marker has these properties:
+**Each marker has these properties:**
 
 - **`lat`** and **`lng`**: coordinates of the marker, **mandatory**
 - **`isClickable`** (`boolean`): whether the marker is clickable or not
-- **`isVisible `** (`boolean`): whether the marker is visible or not
+- **`isVisible`** (`boolean`): whether the marker is visible or not
 - **`isDraggable`** (`boolean`): whether the marker is draggable or not
 - **`title`** (`string`): title of the marker (visible on hover)
 - **`opacity`** (`number`): opacity of the marker
 - **`icon`** (`string` or [`google.maps.Icon`](https://developers.google.com/maps/documentation/javascript/reference#Icon)): icon of the marker
-- **`zIndex `** (`number`): z-index of the marker
-- **`hasInfoWindow `** (`boolean`): whether there is an `InfoWindow` attached to this marker or not
-- **`description `** (`string`): will be used to fill the attached `InfoWindow` if no template have been specified
-- **`isInfoWindowVisible `** (`boolean`): whether the attached `InfoWindow` is visible or not
-- **`infoWindowTemplateName `** (`string`): template to be used with the `InfoWindow`
+- **`zIndex`** (`number`): z-index of the marker
+- **`hasInfoWindow`** (`boolean`): whether there is an info-window attached to this marker or not
+- **`description`** (`string`): will be used to fill the attached info-window if no template have been specified
+- **`isInfoWindowVisible`** (`boolean`): whether the attached info-window is visible or not
+- **`infoWindowTemplateName`** (`string`): template to be used with the info-window
 
 #### Info Windows
 <img align="right" src="assets/info-window.png" height="100">
 - Google type: [google.maps.InfoWindow](https://developers.google.com/maps/documentation/javascript/reference#InfoWindow)
 - Component property: **`infoWindows`**
+- Events: **`closeclick`** and **`domready`**
+- _If you want to attach an info-window to a marker, prefer using the built-in marker's info-window related properties (see above)_
+- Special component properties:
+    - **`infoWindowController`**: name of the controller to use for each info-window, must extend `google-map/info-window` controller
+    - **`infoWindowViewClass`**: name or class of the view to use for each info-window, must extend `google-map/info-window` view
+    - **`infoWindowTemplateName`**: name of the template to use for each info-window
+
+**Each info-window has these properties:**
+- **`lat`** and **`lng`**: coordinates of the info-window, **mandatory**
+- **`isVisible`** (`boolean`): whether the info-window is visible or not
+- **`zIndex`** (`number`): z-index of the info-window
+- **`title`** (`string`): title of the info-window
+- **`description`** (`string`): body of the info-window
+- **`templateName`** (`string`): name of the template to use with the info-window
 
 #### Circles
 <img align="right" src="assets/circle.png" height="100">
 - Google type: [google.maps.Circle](https://developers.google.com/maps/documentation/javascript/reference#Circle)
 - Component property: **`circles`**
+- Events: **`click`**, **`dblclick`**, **`drag`**, **`dragend`**, **`dragstart`**, **`mousedown`**, **`mouseout`**, **`mouseover`**, **`mouseup`** and **`rightclick`**
+- Special component properties:
+    - **`circleController`**: name of the controller to use for each circle, must extend `google-map/circle` controller
+    - **`circleViewClass`**: name or class of the view to use for each circle, must extend `google-map/circle` view
+
+**Each circle has these properties:**
+- **`lat`** and **`lng`**: coordinates of the circle, **mandatory**
+- **`radius`** (`number`): radius of the circle (in meters), **mandatory**
+- **`isClickable`** (`boolean`): whether the circle is clickable or not
+- **`isVisible`** (`boolean`): whether the circle is visible or not
+- **`isDraggable`** (`boolean`): whether the circle is draggable or not
+- **`isEditable`** (`boolean`): whether the circle is editable or not
+- **`strokeColor`** (`string`): css color of the circle's stroke (read-only after creation)
+- **`strokeOpacity`** (`number`): opacity of the circle's stroke (read-only after creation)
+- **`strokeWeight`** (`number`): weight of the circle's stroke (read-only after creation)
+- **`fillColor`** (`string`): css color of the circle's fill (read-only after creation)
+- **`fillOpacity`** (`number`): opacity of the circle's fill (read-only after creation)
+- **`zIndex`** (`number`): z-index of the circle
 
 #### Polyline
 <img align="right" src="assets/polyline.png" height="100">
 - Google type: [google.maps.Polyline](https://developers.google.com/maps/documentation/javascript/reference#Polyline)
 - Component property: **`polylines`**
+- Events: **`click`**, **`dblclick`**, **`drag`**, **`dragend`**, **`dragstart`**, **`mousedown`**, **`mouseout`**, **`mouseover`**, **`mouseup`** and **`rightclick`**
+- Special component properties:
+    - **`polylineController`**: name of the controller to use for each polyline, must extend `google-map/polyline` controller
+    - **`polylinePathController`**: name of the controller to use for each polyline path, must extend `google-map/polyline-path` controller
+    - **`polylineViewClass`**: name or class of the view to use for each polyline, must extend `google-map/polyline` view
+
+**Each polyline has these properties:**
+- **`lat`** and **`lng`**: coordinates of the polyline, **mandatory**
+- **`path`** (`Array.<{lat: number, lng: number}>`): path of the polyline (each item represent a point of the path), **mandatory**
+- **`icons`** ([`Array.<IconSequence>`](https://developers.google.com/maps/documentation/javascript/reference#IconSequence)): the icons to be rendered along the polyline
+- **`isClickable`** (`boolean`): whether the polyline is clickable or not
+- **`isVisible`** (`boolean`): whether the polyline is visible or not
+- **`isDraggable`** (`boolean`): whether the polyline is draggable or not
+- **`isEditable`** (`boolean`): whether the polyline is editable or not
+- **`isGeodesic`** (`boolean`): whether the polyline is geodesic or not (when `true` the edges follow the curvature of the Earth)
+- **`strokeColor`** (`string`): css color of the polyline's stroke (read-only after creation)
+- **`strokeOpacity`** (`number`): opacity of the polyline's stroke (read-only after creation)
+- **`strokeWeight`** (`number`): weight of the polyline's stroke (read-only after creation)
+- **`zIndex`** (`number`): z-index of the polyline
 
 #### Polygon
 <img align="right" src="assets/polygon.png" height="100">
 - Google type: [google.maps.Polygon](https://developers.google.com/maps/documentation/javascript/reference#Polygon)
 - Component property: **`polygons`**
+- Events: **`click`**, **`dblclick`**, **`drag`**, **`dragend`**, **`dragstart`**, **`mousedown`**, **`mouseout`**, **`mouseover`**, **`mouseup`** and **`rightclick`**
+- Special component properties:
+    - **`polygonController`**: name of the controller to use for each polygon, must extend `google-map/polygon` controller
+    - **`polygonPathController`**: name of the controller to use for each polygon path, must extend `google-map/polygon-path` controller
+    - **`polygonViewClass`**: name or class of the view to use for each polygon, must extend `google-map/polygon` view
+
+**Each polygon has these properties:**
+- **`lat`** and **`lng`**: coordinates of the polygon, **mandatory**
+- **`path`** (`Array.<{lat: number, lng: number}>`): path of the polygon (each item represent a point of the path), **mandatory**
+- **`icons`** ([`Array.<IconSequence>`](https://developers.google.com/maps/documentation/javascript/reference#IconSequence)): the icons to be rendered along the polygon
+- **`isClickable`** (`boolean`): whether the polygon is clickable or not
+- **`isVisible`** (`boolean`): whether the polygon is visible or not
+- **`isDraggable`** (`boolean`): whether the polygon is draggable or not
+- **`isEditable`** (`boolean`): whether the polygon is editable or not
+- **`isGeodesic`** (`boolean`): whether the polygon is geodesic or not (when `true` the edges follow the curvature of the Earth)
+- **`strokeColor`** (`string`): css color of the polygon's stroke (read-only after creation)
+- **`strokeOpacity`** (`number`): opacity of the polygon's stroke (read-only after creation)
+- **`strokeWeight`** (`number`): weight of the polygon's stroke (read-only after creation)
+- **`fillColor`** (`string`): css color of the polygon's fill (read-only after creation)
+- **`fillOpacity`** (`number`): opacity of the polygon's fill (read-only after creation)
+- **`zIndex`** (`number`): z-index of the polygon
 
 
 ## Controllers
