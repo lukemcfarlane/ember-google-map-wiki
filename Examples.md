@@ -1,6 +1,6 @@
 ## Basic map with a given zoom and position
 
-1. Create a new Ember application (supposing here that you already have installed `ember-cli`
+1. Create a new Ember application (supposing here that you already have installed `ember-cli`). In a terminal, type:
 
     ```bash
     ember new google-map-demo
@@ -25,13 +25,13 @@
     </div>
     ```
 
-3. Create the `application` controller
+3. Create the `application` controller. In the terminal, type:
 
     ```bash
     ember g controller application
     ```
 
-    and complete it like this:
+    and complete the `app/controllers/application.js` so that it looks like this:
 
     ```js
     import Ember from 'ember';
@@ -43,13 +43,13 @@
     });
     ```
 
-4. Run the application and cehckout the result!
+4. Run the application and cehckout the result. In the terminal, type:
 
     ```bash
     ember serve
     ```
 
-    and open http://localhost:4200
+    and open http://localhost:4200 with your prefered browser.
 
 ## Adding markers with info-windows
 
