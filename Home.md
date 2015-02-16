@@ -1,4 +1,4 @@
-<img src="https://nodei.co/npm/ember-google-map.png?downloadRank=true&stars=true">
+<img src="https://nodei.co/npm/ember-google-map.png?downloadRank=true&stars=true&downloads=true">
 <img src="wiki/assets/icon.png" align="right" width="150" height="150">
 
 
