@@ -43,8 +43,9 @@ EmberJS Google Map
 * [[Answering Google events|Examples#answering-google-events]]
 
 #### [[FAQ]]
-* [[Why {{google-map markers=m lat=m.firstObject.lat ...}} fails?|FAQ#why-google-map-markers-m-lat-m-firstobject-lat-fails]]
-* _complete with bugs that have been reported so far_
+* [[Why {{google-map markers=m lat=m.firstObject.lat ...}} fails?|FAQ#1-why-google-map-markersm-latmfirstobjectlat--fails]]
+* [[How can I handle Google events on overlays?|FAQ#2-how-can-i-handle-google-events-on-overlays]]
+* [[Getting ERROR: markerViewClass must be a subclass or an instance of Ember.View error, what's wrong?|FAQ#3-getting-error-markerviewclass-must-be-a-subclass-or-an-instance-of-emberview-error-whats-wrong]]
 
 #### [[About]]
 * [[Author|About#author]]
