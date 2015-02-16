@@ -53,9 +53,26 @@ Any drawable object (also called _overlays_ by Google) of the map has its corres
 
 
 #### Markers
-<img align="right" src="assets/marker.png" height="80">
+<img align="right" src="assets/marker.png" height="100">
 - Google Maps: [google.maps.Marker](https://developers.google.com/maps/documentation/javascript/reference#Marker)
 - Component property: **`markers`**
+- Events: **`click`**, **`dblclick`**, **`drag`**, **`dragend`**, **`dragstart`**, **`mousedown`**, **`mouseout`**, **`mouseover`**, **`mouseup`** and **`rightclick`**
+
+Each marker has these properties:
+
+- **`lat`** and **`lng`**: coordinates of the marker, **mandatory**
+- **`isClickable`** (`boolean`): whether the marker is clickable or not
+- **`isVisible `** (`boolean`): whether the marker is visible or not
+- **`isDraggable`** (`boolean`): whether the marker is draggable or not
+- **`title`** (`string`): title of the marker (visible on hover)
+- **`opacity`** (`number`): opacity of the marker
+- **`icon`** (`string` or `[google.maps.Icon](https://developers.google.com/maps/documentation/javascript/reference#Icon)`): icon of the marker
+- **`zIndex `** (`number`): z-index of the marker
+- **`hasInfoWindow `** (`boolean`): whether there is an `InfoWindow` attached to this marker or not
+- **`description `** (`string`): will be used to fill the attached `InfoWindow` if no template have been specified
+- **`isInfoWindowVisible `** (`boolean`): whether the attached `InfoWindow` is visible or not
+- **`infoWindowTemplateName `** (`string`): template to be used with the `InfoWindow`
+- **``* (``): 
 
 #### Info Windows
 <img align="right" src="assets/info-window.png" height="80">
