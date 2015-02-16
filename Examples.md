@@ -1,6 +1,6 @@
 ## Basic map with a given zoom and position
 
-1. Create a new Ember application (supposing here that you already have installed `ember-cli`). In a terminal, type:
+1. **Create a new Ember application (supposing here that you already have installed `ember-cli`). In a terminal, type:**
 
     ```bash
     ember new google-map-demo
@@ -13,7 +13,7 @@
     bower install --save ember#1.9.1
     ```
 
-2. Go edit the application template (at `app/templates/application.hbs`) and replace it with:
+2. **Go edit the application template (at `app/templates/application.hbs`) and replace it with:**
 
     ```handlebars
     <h1>Welcome to Google Map demo!</h1>
@@ -32,7 +32,7 @@
     </div>
     ```
 
-3. Create the `application` controller. In the terminal, type:
+3. **Create the `application` controller. In the terminal, type:**
 
     ```bash
     ember g controller application
@@ -50,7 +50,7 @@
     });
     ```
 
-4. Edit `app/styles/app.css` to define the size of the map canvas:
+4. **Edit `app/styles/app.css` to define the size of the map canvas:**
 
     ```css
     .map-canvas {
@@ -59,7 +59,7 @@
     }
     ```
 
-5. Run the application and checkout the result. In the terminal, type:
+5. **Run the application and checkout the result. In the terminal, type:**
 
     ```bash
     ember serve
@@ -71,7 +71,7 @@
 
 Now it's time to add some overlay objects in your map. We'll create a fake model representing our markers and use them in the component.
 
-1. Create the application route so that we can return a fake model representing the markers. In the terminal, type:
+1. **Create the application route so that we can return a fake model representing the markers. In the terminal, type:**
 
     ```bash
     ember g route application
@@ -92,7 +92,7 @@ Now it's time to add some overlay objects in your map. We'll create a fake model
     });
     ```
 
-2. Create the info-window template. In the terminal, type:
+2. **Create the info-window template. In the terminal, type:**
 
     ```bash
     ember g template map/info-window
@@ -110,16 +110,14 @@ Now it's time to add some overlay objects in your map. We'll create a fake model
     </p>
     ```
 
-3. Now we need to update the `application` template so that we tell the component to use our fresh template. Edit `app/templates/application.hbs` and add the `markerInfoWindowTemplateName` property in `{{google-map ...}}`:
+3. **Now we need to update the `application` template so that we tell the component to use our own template. Edit `app/templates/application.hbs` and add the `markerInfoWindowTemplateName` property in `{{google-map ...}}`:**
 
     ```handlebars
-    {! ... }}
     {{google-map markerInfoWindowTemplateName='map/info-window'
                  ...}}
-    {! ... }}
     ```
 
-4. Start `ember serve` if you had stopped it, else just go to http://localhost:4200 and check the result.
+4. **Start `ember serve` if you had stopped it, else just go to http://localhost:4200 and check the result**
 
 ## Adding polylines
 
