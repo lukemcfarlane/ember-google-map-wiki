@@ -1,33 +1,33 @@
 ### Introduction
 
-Any `lat` or `lng` properties in the following documentation refer respectively to the latitude and longitude values of the concerned object. They are of type `number`.
+Quite a number of the objects below define `lat` and `lng` properties. Any reference to `lat` and `lng` in the following documentation refers to the latitude and longitude values of the object currently under discussion. Each of the `lat` and `lng` properties are of type `number`.
 
 
-## Main `{{google-map}}` component
+## The Main `{{google-map}}` Component
 
-THe main thing of this addon is of course the map component, which you can use in your templates with `{{google-map}}`.
+The centerpiece of this addon is of course the map component. You can use the component by placing the following within your templates: `{{google-map}}`.
 
-Everything then defined as properties (and described below) are then bound with 2 way data-binding, which means that everything done within your Ember application code will be reflected on the map, and everything done on the map will be reflected in your Ember objects. This also means that you should not use the same object or properties to, for example, define the center of the map as the first marker position. If you want to do this, you'll need to have another property defined in your controller linked to that first marker position using `Ember.computed.reads` (or `oneWay`).
+All of the other attributes of the map are defined as properties. Each of these properties is described below. Each of the properties listed are bound using two way data-binding. This means that when any of the property values is changed within your Ember application code the new values will be reflected on the map and that any changes the user makes to the map itself will will be reflected in your Ember objects. As a consequence of two way data binding, you should not use the same object or properties to, for example, define the center of the map  and to define the position of the first marker. If you want to implement functionality that binds the same property to multiple objects, you'll need to have another property defined in your controller that links to the first marker position using `Ember.computed.reads` (or `oneWay`).
 
 ### Basic properties
 
-- **`lat`** and **`lng`** (`number`, default: `0`)
+- **`lat`** and **`lng`** (type: `number`, default value: `0`)
 
-    Those properties are use to define (or track) the center of the map.
+    These properties are used to define (and track) the center of the map.
 
-- **`type`** (`string`, default: `road`)
+- **`type`** (type `string`, default value: `road`)
 
-    The type of the map. Its value can be `road`, `satellite`, `terrain` or `hybrid`.
+    The type of the map. Possible values are `road`, `satellite`, `terrain` and `hybrid`.
 
-- **`zoom`** (`number`, default: `5`)
+- **`zoom`** (type `number`, default value: `5`)
 
-    The zoom level of the map. It's a `number` between `0` and `18` but it has limitation depending the type of map you're using. See [Google documentation](https://developers.google.com/maps/documentation/javascript/maxzoom).
+    How zoomed in the map is. Zoom must be a `number` between `0` and `18` but it is limited depending on the type of map you're using. See the [Google Documentation](https://developers.google.com/maps/documentation/javascript/maxzoom).
 
-- **`fitBoundsArray`** (`Array.<{lat: number, lng: number}>`, default: _automatic depending on `autoFitBounds`_)
+- **`fitBoundsArray`** (type: `Array.<{lat: number, lng: number}>`, default value: _automatic depending on `autoFitBounds`_)
 
-    An array of objects containing `lat` and `lng` coordinates. All coordinates will be used to center and zoom the map so that it can render all of the given positions. Do not set this if you defined `autoFitBounds` to something else than `false` (see below).
+    An array of objects containing `lat` and `lng` coordinates. All of the points within the array will be used to center and zoom the map so that it can render all of the given positions within view. Do not set this if you have defined `autoFitBounds` to something else than `false` (see below).
 
-- **`autoFitBounds`** (`boolean` or `string`, default: `false`)
+- **`autoFitBounds`** (type: `boolean` or `string`, default value: `false`)
 
     This can be a boolean, in which case if `false` it'll do nothing, else if `true` it'll automatically center and zoom the map so that all [[objects you defined on the map|Provided-Tools-and-Classes-(API)#defining-objects-to-draw]] would be visible on the map.
 
