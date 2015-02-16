@@ -53,7 +53,7 @@ Any drawable object (also called _overlay_ by Google) of the map has its corresp
 
 #### Markers
 <img align="right" src="assets/marker.png" height="100">
-Google type: [google.maps.Marker](https://developers.google.com/maps/documentation/javascript/reference#Marker)
+- Google type: [google.maps.Marker](https://developers.google.com/maps/documentation/javascript/reference#Marker)
 - Component property: **`markers`**
 - Events: **`click`**, **`dblclick`**, **`drag`**, **`dragend`**, **`dragstart`**, **`mousedown`**, **`mouseout`**, **`mouseover`**, **`mouseup`** and **`rightclick`**
 - Special component properties:
@@ -171,15 +171,126 @@ Google type: [google.maps.Marker](https://developers.google.com/maps/documentati
 
 
 ## Controllers
+### Introduction
 
-### Array controllers
-### Associated object controllers (item controllers)
-### Customising the path to `lat`, `lng`, ...
+While you do not need to specify and extend any controller, you have the possibility to extend them to have full control over your map overlay objects. This allow you to have models for this objects which do not reflect the expected property names for example, or handle specific actions when a property value changes.
+
+All controllers are injected in `app/controllers/google-map` path when the application is built. Let's say for example that you want to extend the `marker` controller in `app/controllers/my-marker.js`:
+
+```js
+import GoogleMapMarkerController from './google-map/marker';
+
+export default GoogleMapMarkerController.extend({
+  // ...
+});
+```
+
+### Available controllers
+
+All overlay object types have one controller which is used as the `itemController` for its associated array of objects. It is named as the object type and is extending `Ember.ObjectController`.
+
+The `polylines` and `polygons` additionally have a path controller (`google-map/polyline-path` and `google-map/polygon-path`) which are extending `Ember.ArrayController` so that you can handle differently their paths.
+
+Here is the list of all controllers available, all injected in `app/controllers/google-map` path:
+- **`marker`**
+- **`info-window`**
+- **`circle`**
+- **`polyline`**
+- **`polyline-path`**
+- **`polygon`**
+- **`polygon-path`**
+
+### Example use-case: custom `lat` and `lng` property names
+
+Let's say that your marker model does not have `lat` and `lng` properties but instead a `coords` object with `latitude` and `longitude` properties. To make the component work properly, you'll need to:
+
+1. extend the `google-map/marker` controller (we will do this in `app/controllers/map/my-marker.js)`:
+
+    ```js
+    import GoogleMapMarkerController from '../google-map/marker';
+
+    export default GoogleMapMarkerController.extend({
+      lat: Ember.computed.alias('coords.latitude'),
+      lng: Ember.computed.alias('coords.longitude')
+    });
+    ```
+
+2. inform the component that you want to use your own controller (in `app/templates/map.hbs`):
+
+    ```handlebars
+    {{google-map ... markerController='map/my-marker'}}
+    ```
+
+...and voila, now your records/objects will be used correctly and updated if the markers are draggable.
 
 
 ## Views
 
-### All views
-### Creating an `InfoWindow` template
-### Listening to Google events
+### Introduction
+
+As for controllers, you do not need to extend and define the views to be used, but it can be useful if you need to listen for the click event for example.
+
+All views are injected in `app/views/google-map` path when the application is built. Let's say for example that you want to extend the `marker` view in `app/views/my-marker.js`:
+
+```js
+import GoogleMapMarkerView from './google-map/marker';
+
+export default GoogleMapMarkerView.extend({
+  // ...
+});
+```
+
+### Available views
+
+All overlay object types have one view which is used to represent, even if only in-memory, each overlay object drawn on the map. It is named as the object type and is extending `Ember.View`.
+
+Here is the list of all views available, all injected in `app/views/google-map` path:
+- **`marker`**
+- **`info-window`**
+- **`circle`**
+- **`polyline`**
+- **`polygon`**
+
+### Events
+
+To listen for google events as specified in the header of each overlay type above, you need to extend the corresponding view and define what you want to do for each event type you want to handle on the `googleEvents` special property.
+
+The `googleEvents` is a hash with each key being the name of the event to listen, and the value being the name of the action to send in case this event is triggered. You can also define each event as an object instead of a string, in which case it has the following options:
+
+- **`target`** (`Object`): the target used to send the action or context of the method to call
+- **`action`** (`string`): the name of the action to send
+- **`method`** (`string` or `Function`): the name or method to call, ignored if `action` is defined, default to the name of the event
+
+### Example use-case: responding to events
+
+Let's say you want to handle the `click` event on your circles to send the `didClick` Ember action (as if `{{action 'didClick'}}`) was thrown from a template. To achieve this you'll need to:
+
+1. create your own circle view extending the one of this addon and define the event (we will do this in `app/views/map/my-circle.js`):
+
+    ```js
+    import GoogleMapCircleView from '../google-map/circle';
+
+    export default GoogleMapCircleView.extend({
+      googleEvents: {
+        click: 'didClick'
+      }
+    });
+    ```
+
+2. tell the component that you want to use a specific view for each circle (in `app/templates/map.hbs` for example):
+
+    ```handlebars
+    {{google-map ... circleViewClass='map/my-circle'}}
+    ```
+
+...and the `didClick` action will be sent when a circle is clicked.
+
 ### Accessing the Google map object (not recommended)
+
+**This is strongly not recommended**, but if you really need to access the Google Maps core `map` object, you can bind the `map` property to your view, then it'll be accessible from that view:
+
+```handlebars
+{{google-map ... map=view.googleMap}}
+```
+
+In the view you can then access the `googleMap` object and it'll be the instance of `google.maps.Map` used to handle the map.

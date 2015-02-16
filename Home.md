@@ -19,18 +19,24 @@ EmberJS Google Map
     - Basic properties
     - Google options as properties
     - Defining objects to draw
+        - markers
+        - info-windows
+        - circles
+        - polylines
+        - polygons
 * [[Controllers|Provided-Tools-and-Classes-(API)#controllers]]
-    - Array controllers
-    - Associated object controllers (item controllers)
-    - Customising the path to `lat`, `lng`, ...
+    - Introduction
+    - Available controllers
+    - Example use-case: custom `lat` and `lng` property names
 * [[Views|Provided-Tools-and-Classes-(API)#views]]
-    - All views
-    - Creating an `InfoWindow` template
-    - Listening to Google events
+    - Introduction
+    - Available views
+    - Events
+    - Example use-case: responding to events
     - Accessing the Google map object (not recommended)
 
 #### [[Examples]]
-* Basic: map with a given zoom and position
+* Basic map with a given zoom and position
 * Adding markers with info-windows
 * Adding poly-lines
 * Listening and answering Google events
