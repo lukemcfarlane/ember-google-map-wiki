@@ -49,12 +49,11 @@ This is valid for any [[view|Provided-Tools-and-Classes-(API)#views]] correspond
 
 ### Defining objects to draw
 
-Any drawable object (also called _overlays_ by Google) of the map has its corresponding array property on the component. Here are the possible things you can draw on the map (and track updates):
-
+Any drawable object (also called _overlay_ by Google) of the map has its corresponding **array** property on the component. Setting those properties with your own arrays let you define what have to be drawn on the map. Here are the possible things you can draw on the map (and track updates):
 
 #### Markers
 <img align="right" src="assets/marker.png" height="100">
-- Google Maps: [google.maps.Marker](https://developers.google.com/maps/documentation/javascript/reference#Marker)
+- Google type: [google.maps.Marker](https://developers.google.com/maps/documentation/javascript/reference#Marker)
 - Component property: **`markers`**
 - Events: **`click`**, **`dblclick`**, **`drag`**, **`dragend`**, **`dragstart`**, **`mousedown`**, **`mouseout`**, **`mouseover`**, **`mouseup`** and **`rightclick`**
 
@@ -72,26 +71,25 @@ Each marker has these properties:
 - **`description `** (`string`): will be used to fill the attached `InfoWindow` if no template have been specified
 - **`isInfoWindowVisible `** (`boolean`): whether the attached `InfoWindow` is visible or not
 - **`infoWindowTemplateName `** (`string`): template to be used with the `InfoWindow`
-- **``* (``): 
 
 #### Info Windows
 <img align="right" src="assets/info-window.png" height="100">
-- Google Maps: [google.maps.InfoWindow](https://developers.google.com/maps/documentation/javascript/reference#InfoWindow)
+- Google type: [google.maps.InfoWindow](https://developers.google.com/maps/documentation/javascript/reference#InfoWindow)
 - Component property: **`infoWindows`**
 
 #### Circles
 <img align="right" src="assets/circle.png" height="100">
-- Google Maps: [google.maps.Circle](https://developers.google.com/maps/documentation/javascript/reference#Circle)
+- Google type: [google.maps.Circle](https://developers.google.com/maps/documentation/javascript/reference#Circle)
 - Component property: **`circles`**
 
 #### Polyline
 <img align="right" src="assets/polyline.png" height="100">
-- Google Maps: [google.maps.Polyline](https://developers.google.com/maps/documentation/javascript/reference#Polyline)
+- Google type: [google.maps.Polyline](https://developers.google.com/maps/documentation/javascript/reference#Polyline)
 - Component property: **`polylines`**
 
 #### Polygon
 <img align="right" src="assets/polygon.png" height="100">
-- Google Maps: [google.maps.Polygon](https://developers.google.com/maps/documentation/javascript/reference#Polygon)
+- Google type: [google.maps.Polygon](https://developers.google.com/maps/documentation/javascript/reference#Polygon)
 - Component property: **`polygons`**
 
 
