@@ -66,7 +66,7 @@ Each marker has these properties:
 - **`isDraggable`** (`boolean`): whether the marker is draggable or not
 - **`title`** (`string`): title of the marker (visible on hover)
 - **`opacity`** (`number`): opacity of the marker
-- **`icon`** (`string` or `[google.maps.Icon](https://developers.google.com/maps/documentation/javascript/reference#Icon)`): icon of the marker
+- **`icon`** (`string` or [`google.maps.Icon`](https://developers.google.com/maps/documentation/javascript/reference#Icon)): icon of the marker
 - **`zIndex `** (`number`): z-index of the marker
 - **`hasInfoWindow `** (`boolean`): whether there is an `InfoWindow` attached to this marker or not
 - **`description `** (`string`): will be used to fill the attached `InfoWindow` if no template have been specified
@@ -75,22 +75,22 @@ Each marker has these properties:
 - **``* (``): 
 
 #### Info Windows
-<img align="right" src="assets/info-window.png" height="80">
+<img align="right" src="assets/info-window.png" height="100">
 - Google Maps: [google.maps.InfoWindow](https://developers.google.com/maps/documentation/javascript/reference#InfoWindow)
 - Component property: **`infoWindows`**
 
 #### Circles
-<img align="right" src="assets/circle.png" height="80">
+<img align="right" src="assets/circle.png" height="100">
 - Google Maps: [google.maps.Circle](https://developers.google.com/maps/documentation/javascript/reference#Circle)
 - Component property: **`circles`**
 
 #### Polyline
-<img align="right" src="assets/polyline.png" height="80">
+<img align="right" src="assets/polyline.png" height="100">
 - Google Maps: [google.maps.Polyline](https://developers.google.com/maps/documentation/javascript/reference#Polyline)
 - Component property: **`polylines`**
 
 #### Polygon
-<img align="right" src="assets/polygon.png" height="80">
+<img align="right" src="assets/polygon.png" height="100">
 - Google Maps: [google.maps.Polygon](https://developers.google.com/maps/documentation/javascript/reference#Polygon)
 - Component property: **`polygons`**
 
