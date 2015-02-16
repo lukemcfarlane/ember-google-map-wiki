@@ -11,9 +11,17 @@
 
     ```handlebars
     <h1>Welcome to Google Map demo!</h1>
-    {{google-map lat=centerLat lng=centerLng zoom=zoom gopt_zoomControl=false}}
+
+    {{google-map lat=centerLat
+                 lng=centerLng
+                 zoom=zoom
+                 gopt_zoomControl=false}}
+
     <div class="controls">
-        <label>Zoom: {{input type="range" value=zoom min=0 max=18 step=1}}</label>
+      <label>
+        Zoom:
+        {{input type="range" value=zoom min=0 max=18 step=1}}
+      </label>
     </div>
     ```
 
@@ -27,6 +35,7 @@
 
     ```js
     import Ember from 'ember';
+
     export default Ember.Controller.extend({
       zoom: 15,
       centerLat: 14.7634505,
