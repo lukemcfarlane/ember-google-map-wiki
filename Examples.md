@@ -86,7 +86,8 @@ Now it's time to add some overlay objects in your map. We'll create a fake model
       model: function() {
         return [
           {title: "Home", lat: 14.766127, lng: 102.810987, body: "Here is B&H's home"},
-          {title: "Shop", lat: 14.762963, lng: 102.812285, body: "Here is B&H's shop!"}
+          {title: "Shop", lat: 14.762963, lng: 102.812285, body: "Here is B&H's shop"},
+          {title: "Hay's", lat: 14.762900, lng: 102.812018, body: "Here is Hay's shop"}
         ];
       }
     });
@@ -110,15 +111,47 @@ Now it's time to add some overlay objects in your map. We'll create a fake model
     </p>
     ```
 
-3. **Now we need to update the `application` template so that we tell the component to use our own template. Edit `app/templates/application.hbs` and add the `markerInfoWindowTemplateName` property in `{{google-map ...}}`:**
+3. **Now we need to update the `application` template so that we tell the component to use our own template. Edit `app/templates/application.hbs` and add the `markerInfoWindowTemplateName` and `markers` properties in `{{google-map ...}}`:**
 
     ```handlebars
     {{google-map markerInfoWindowTemplateName='map/info-window'
+                 markers=model
                  ...}}
     ```
 
 4. **Start `ember serve` if you had stopped it, else just go to http://localhost:4200 and check the result**
 
 ## Adding polylines
+
+As we are lazy (well, I am), we are going to use the 3 existing markers as the path for our polyline, but you of course can use data from another source or create another fake model to test.
+
+We also want to have the polyline being editable, so that you can see the powerfulness of the data binding coupled with Google Maps events made easy with this addon. Changing a path's item (white spot) on the map will also move the marker since we'll use the same data.
+
+1. **Open the `application` controller so that we can create the property holding our polylines, actually here only one. Edit `app/controllers/application.js` and add these properties:**
+
+    ```js
+      polyline: Ember.computed('model', function() {
+        return {
+          // we do not want to create new markers when some
+          // items are added to the path so we call `slice()`
+          // to grab a copy of the array instead
+          path:       this.get('model').slice(),
+          isEditable: true
+        };
+      }),
+
+      polylinesArray: computed('polyline', function() {
+        return [ this.get('polyline') ];
+      })
+    ```
+
+2. **Now go edit the `application` template to set the `polylines` property of the `{{google-map...}}` tag:**
+
+    ```handlebars
+    {{google-map polylines=polylinesArray
+                 ...}}
+    ```
+
+4. **Finally start `ember serve` if you had stopped it, else just go to http://localhost:4200 and to check it out**
 
 ## Answering Google events
