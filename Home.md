@@ -6,6 +6,7 @@ EmberJS Google Map
 ==================
 
 #### [[Installation]]
+* [[Introduction|Installation#introduction]]
 * [[Requirements|Installation#requirements]]
 * [[Install the addon|Installation#install-the-addon]]
 
