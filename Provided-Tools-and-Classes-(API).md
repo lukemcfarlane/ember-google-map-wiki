@@ -25,31 +25,34 @@ All of the other attributes of the map are defined as properties. Each of these 
 
 - **`fitBoundsArray`** (type: `Array.<{lat: number, lng: number}>`, default value: _automatic depending on `autoFitBounds`_)
 
-    An array of objects containing `lat` and `lng` coordinates. All of the points within the array will be used to center and zoom the map so that it can render all of the given positions within view. Do not set this if you have defined `autoFitBounds` to something else than `false` (see below).
+    An array of objects containing `lat` and `lng` coordinates. All of the points within the array will be used to center and zoom the map so that it can render all of the given positions within the google map canvas. Do not set this if you have defined `autoFitBounds` to something else than `false` (see below).
 
 - **`autoFitBounds`** (type: `boolean` or `string`, default value: `false`)
 
-    This can be a boolean, in which case if `false` it'll do nothing, else if `true` it'll automatically center and zoom the map so that all [[objects you defined on the map|Provided-Tools-and-Classes-(API)#defining-objects-to-draw]] would be visible on the map.
+`autoFitBounds` can either be a `boolean or a string`.
 
-    It can also be a `string` containing the list of type of objects which you want to all fit in the map. It's like if you set it to `true`, except it'll take care only of the objects of given type(s). For example `markers,circles` would center and zoom the map so that all markers and circle will be visible, but won't take care of other objects on the map. Valid types are: `markers`, `infoWindows`, `circles`, `polylines` and `polygons`.
+    If it is a `boolean`, setting `autoFitBounds` to `false` will do nothing. If `autoFitBounds` is set to `true` it will automatically center and zoom the map so that all of the [[objects you defined on the map|Provided-Tools-and-Classes-(API)#defining-objects-to-draw]] will be visible.
+
+    If it is a `string`, `autoFitBounds` should contain a list of the type of objects which will all be fit onto the map. Providing a list of the types of objects to fit on the map, will cause the component to behave similarly to if you had set `autoFitBounds` to `true`, except the map will only zoom and focus to accommodate objects of the given type(s) . For example, providing a value of `markers,circles` would center and zoom the map so that all markers and circle are visible, but would not try to ensure that other objects (such as `polylines` or 'polygons') are within the map's bounds. Valid types to be included in the list of object types are: `markers`, `infoWindows`, `circles`, `polylines` and `polygons`.
 
 
 ### Google options as properties
 
-Any [Google Maps option](https://developers.google.com/maps/documentation/javascript/reference#MapOptions) which is not handled by a component property can be set using the same option name prefixed with **`gopt_`**.
+Any [Google Maps option](https://developers.google.com/maps/documentation/javascript/reference#MapOptions) which is not handled by a component property can be set using prefixed the option name given by Google with **`gopt_`**.
 
-For example to disable the zoom controls (Google Maps option named `zoomControl`):
+For example, to disable the zoom controls (Google Maps option named `zoomControl`):
 
 ```handlebars
 {{google-map ... gopt_zoomControl=false}}
 ```
 
-This is valid for any [[view|Provided-Tools-and-Classes-(API)#views]] corresponding to a Google Maps object. Refer to the [Google Maps documentation](https://developers.google.com/maps/documentation/javascript/reference) for possible settings.
+Any [[view|Provided-Tools-and-Classes-(API)#views]] corresponding to a Google Maps object can also be bound to an option provided by Google in the same manner. Refer to the [Google Maps documentation](https://developers.google.com/maps/documentation/javascript/reference) for possible settings.
 
 
 ### Defining objects to draw
 
-Any drawable object (also called _overlay_ by Google) of the map has its corresponding **array** property on the component. Setting those properties with your own arrays let you define what have to be drawn on the map. Here are the possible things you can draw on the map (and track updates):
+
+Each type of drawable object (objects which Google calls _overlay_s) that can be displayed on the map has a corresponding **array** property on the component. Setting each property with an array you define let's you define what will be drawn on the map. There is a list of the things that you can draw on the map below. Note that each of these arrays are bound to the map with two way data binding so that they will track changes that are made by the user and the map will reflect updates when you change the content of the arrays from within your code:
 
 #### Markers
 <img align="right" src="assets/marker.png" height="100">
@@ -59,8 +62,8 @@ Any drawable object (also called _overlay_ by Google) of the map has its corresp
 - Special component properties:
     - **`markerController`**: name of the controller to use for each marker, must extend `google-map/marker` controller
     - **`markerViewClass`**: name or class of the view to use for each marker, must extend `google-map/marker` view
-    - **`markerInfoWindowTemplateName`**: name of the template to use for all markers' info-window
-    - **`markerHasInfoWindow`**: whether all marker with undefined `hasInfoWindow` should have an info-window or not
+    - **`markerInfoWindowTemplateName`**: name of the template to use for all marker info-windows
+    - **`markerHasInfoWindow`**: whether without defined `hasInfoWindow` properties should have an info-window or not
 
 **Each marker has these properties:**
 
@@ -73,16 +76,16 @@ Any drawable object (also called _overlay_ by Google) of the map has its corresp
 - **`icon`** (`string` or [`google.maps.Icon`](https://developers.google.com/maps/documentation/javascript/reference#Icon)): icon of the marker
 - **`zIndex`** (`number`): z-index of the marker
 - **`hasInfoWindow`** (`boolean`): whether there is an info-window attached to this marker or not
-- **`description`** (`string`): will be used to fill the attached info-window if no template have been specified
+- **`description`** (`string`): will be used to fill the attached info-window if no template has been specified
 - **`isInfoWindowVisible`** (`boolean`): whether the attached info-window is visible or not
-- **`infoWindowTemplateName`** (`string`): template to be used with the info-window
+- **`infoWindowTemplateName`** (`string`): template to be used for the info-window
 
 #### Info Windows
 <img align="right" src="assets/info-window.png" height="100">
 - Google type: [google.maps.InfoWindow](https://developers.google.com/maps/documentation/javascript/reference#InfoWindow)
 - Component property: **`infoWindows`**
 - Events: **`closeclick`** and **`domready`**
-- _If you want to attach an info-window to a marker, prefer using the built-in marker's info-window related properties (see above)_
+- _If you want to attach an info-window to a marker, use the built-in marker's info-window properties instead (see above)_
 - Special component properties:
     - **`infoWindowController`**: name of the controller to use for each info-window, must extend `google-map/info-window` controller
     - **`infoWindowViewClass`**: name or class of the view to use for each info-window, must extend `google-map/info-window` view
@@ -94,7 +97,7 @@ Any drawable object (also called _overlay_ by Google) of the map has its corresp
 - **`zIndex`** (`number`): z-index of the info-window
 - **`title`** (`string`): title of the info-window
 - **`description`** (`string`): body of the info-window
-- **`templateName`** (`string`): name of the template to use with the info-window
+- **`templateName`** (`string`): name of the template to use for the info-window
 
 #### Circles
 <img align="right" src="assets/circle.png" height="100">
@@ -131,7 +134,7 @@ Any drawable object (also called _overlay_ by Google) of the map has its corresp
 
 **Each polyline has these properties:**
 - **`lat`** and **`lng`**: coordinates of the polyline, **mandatory**
-- **`path`** (`Array.<{lat: number, lng: number}>`): path of the polyline (each item represent a point of the path), **mandatory**
+- **`path`** (`Array.<{lat: number, lng: number}>`): path of the polyline (each item represents a point on the path), **mandatory**
 - **`icons`** ([`Array.<google.maps.IconSequence>`](https://developers.google.com/maps/documentation/javascript/reference#IconSequence)): the icons to be rendered along the polyline
 - **`isClickable`** (`boolean`): whether the polyline is clickable or not
 - **`isVisible`** (`boolean`): whether the polyline is visible or not
@@ -155,7 +158,7 @@ Any drawable object (also called _overlay_ by Google) of the map has its corresp
 
 **Each polygon has these properties:**
 - **`lat`** and **`lng`**: coordinates of the polygon, **mandatory**
-- **`path`** (`Array.<{lat: number, lng: number}>`): path of the polygon (each item represent a point of the path), **mandatory**
+- **`path`** (`Array.<{lat: number, lng: number}>`): path of the polygon (each item represents a point of the path), **mandatory**
 - **`icons`** ([`Array.<google.maps.IconSequence>`](https://developers.google.com/maps/documentation/javascript/reference#IconSequence)): the icons to be rendered along the polygon
 - **`isClickable`** (`boolean`): whether the polygon is clickable or not
 - **`isVisible`** (`boolean`): whether the polygon is visible or not
@@ -173,9 +176,9 @@ Any drawable object (also called _overlay_ by Google) of the map has its corresp
 ## Controllers
 ### Introduction
 
-While you do not need to specify and extend any controller, you have the possibility to extend them to have full control over your map overlay objects. This allow you to have models for this objects which do not reflect the expected property names for example, or handle specific actions when a property value changes.
+While you do not need to specify and extend any controller, you have the possibility of extending them in order to have full control over your map overlay objects. This allows you to have models for these objects which do not reflect the expected property names, for example, or to handle specific actions when a property value changes.
 
-All controllers are injected in `app/controllers/google-map` path when the application is built. Let's say for example that you want to extend the `marker` controller in `app/controllers/my-marker.js`:
+All controllers are injected in the `app/controllers/google-map` path when the application is built. Suppose for example that you want to extend the `marker` controller in `app/controllers/my-marker.js`:
 
 ```js
 import GoogleMapMarkerController from './google-map/marker';
@@ -187,11 +190,11 @@ export default GoogleMapMarkerController.extend({
 
 ### Available controllers
 
-All overlay object types have one controller which is used as the `itemController` for its associated array of objects. It is named as the object type and is extending `Ember.ObjectController`.
+Each overlay object type has a controller which is used as the `itemController` for the associated array of objects. These controllers are named in line with their object types extend `Ember.ObjectController`.
 
-The `polylines` and `polygons` additionally have a path controller (`google-map/polyline-path` and `google-map/polygon-path`) which are extending `Ember.ArrayController` so that you can handle differently their paths.
+The `polylines` and `polygons` each have an additional path controller (`google-map/polyline-path` and `google-map/polygon-path`). The `polyline-path` and `polygon-path` controllers each extend `Ember.ArrayController` so that you can handle their paths separately.
 
-Here is the list of all controllers available, all injected in `app/controllers/google-map` path:
+Here is the list of all controllers created by the add-on. Each of them is injected into the path `app/controllers/google-map`:
 - **`marker`**
 - **`info-window`**
 - **`circle`**
@@ -221,16 +224,16 @@ Let's say that your marker model does not have `lat` and `lng` properties but in
     {{google-map ... markerController='map/my-marker'}}
     ```
 
-...and voila, now your records/objects will be used correctly and updated if the markers are draggable.
+...and voila, now your records/objects will be used correctly and updated if the markers are draggable and the user moves them.
 
 
 ## Views
 
 ### Introduction
 
-As for controllers, you do not need to extend and define the views to be used, but it can be useful if you need to listen for the click event for example.
+You do not need to define and extend the views to be used with your controllers, but defining them can be useful if you need to listen for the `click` event, for example.
 
-All views are injected in `app/views/google-map` path when the application is built. Let's say for example that you want to extend the `marker` view in `app/views/my-marker.js`:
+All views are injected in the `app/views/google-map` path when the application is built. Let's say for example that you wanted to extend the `marker` view in `app/views/my-marker.js`:
 
 ```js
 import GoogleMapMarkerView from './google-map/marker';
@@ -242,9 +245,9 @@ export default GoogleMapMarkerView.extend({
 
 ### Available views
 
-All overlay object types have one view which is used to represent, even if only in-memory, each overlay object drawn on the map. It is named as the object type and is extending `Ember.View`.
+Each overlay object type has a view which is used to represent it.  The views may only be generated in memory, but they always exist and represent each overlay object drawn on the map. Each view is named after the particular object type it represents and extends `Ember.View`.
 
-Here is the list of all views available, all injected in `app/views/google-map` path:
+Here is the list of all views available. Each of them are injected into the `app/views/google-map` path:
 - **`marker`**
 - **`info-window`**
 - **`circle`**
@@ -253,14 +256,14 @@ Here is the list of all views available, all injected in `app/views/google-map` 
 
 ### Events
 
-To listen for google events as specified in the header of each overlay type above, you need to extend the corresponding view and define what you want to do for each event type you want to handle on the `googleEvents` special property.
+To listen for any of the available Google events that are listed in the section for each overlay type above, you will need to extend the view for a particular overlay type and define what you want to do for the events  you want to handle in the `googleEvents` property.
 
-The `googleEvents` is a hash with each key being the name of the event to listen, and the value being the name of the action to send in case this event is triggered. You can also define each event as an object instead of a string, in which case it has the following options:
+The `googleEvents` property is a hash where each key is the name of the event to listen to and the value being the name of the action to send when the event listed for the key is triggered. You can also define each event as an object instead of a string, in which case it has the following options:
 
-- **`target`** (`Object`): the target used to send the action or context of the method to call
+- **`target`** (`Object`): the target used to send the action or the context of the method to call
 - **`action`** (`string`): the name of the action to send
-- **`method`** (`string` or `Function`): the name or method to call, ignored if `action` is defined, default to the name of the event
-- **`prepend`** (`boolean`): whether to prepend arguments with the event name or not - by default, it's automatically prepended when it's a method, but not when it's an action
+- **`method`** (`string` or `Function`): the name or method to call, ignored if `action` is defined, defaults to the name of the event
+- **`prepend`** (`boolean`): whether to prepend arguments with the event name or not. The default behavior is that the event name is automatically prepended when it is a method, but not when it is an action.
 
 The action method, or simple method will be called with:
 - **`name`** (`string`): the event name if `prepend` is `true` or if it's undefined and it's not an action
@@ -271,7 +274,7 @@ The action method, or simple method will be called with:
 
 Let's say you want to handle the `click` event on your circles to send the `didClick` Ember action (as if `{{action 'didClick'}}`) was thrown from a template. To achieve this you'll need to:
 
-1. create your own circle view extending the one of this addon and define the event (we will do this in `app/views/map/my-circle.js`):
+1. create your own circle view extending the one created by this addon and define the event in the view you've created. (We will do this in `app/views/map/my-circle.js`.):
 
     ```js
     import GoogleMapCircleView from '../google-map/circle';
@@ -293,10 +296,10 @@ Let's say you want to handle the `click` event on your circles to send the `didC
 
 ### Accessing the Google map object (not recommended)
 
-**This is strongly not recommended**, but if you really need to access the Google Maps core `map` object, you can bind the `map` property to your view, then it'll be accessible from that view:
+**This is strongly not recommended**, but if you really need to access the Google Maps core `map` object, you can bind the `map` property to your view and then it will be accessible from that view:
 
 ```handlebars
 {{google-map ... map=view.googleMap}}
 ```
 
-In the view you can then access the `googleMap` object and it'll be the instance of `google.maps.Map` used to handle the map.
+In the view you can then access the `googleMap` object and it will be an instance of `google.maps.Map` used to handle the map.
