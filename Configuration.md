@@ -1,5 +1,14 @@
 ### Introduction
 
+It's not really a configuration, but a required step before you can ever see the map. As explained in the Google Maps documentation, the map requires that you define the size of the canvas. So you need to add one css rule:
+
+```css
+.map-canvas {
+  width: 600px;
+  height: 400px;
+}
+```
+
 All configurations described below are done in the `config/environment.js` of your application, in a `googleMap` property of `ENV`:
 
 ```js
