@@ -19,9 +19,9 @@ ENV.googleMap = {
 
 ## Google API key or Client ID
 
-* Google Map doesn't require that an API key to be used, but Google recommends creating and using one. To create a new API key, go to [this link](https://developers.google.com/maps/documentation/javascript/tutorial#api_key). Once you have obtained an API key you will be able to use it by defining an **`apiKey`** property within the [[configuration|Configuration#introduction]].
+* Using the Google Maps API doesn't require an API key, but Google recommends creating and using one. To create a new API key, go to [this link](https://developers.google.com/maps/documentation/javascript/tutorial#api_key). Once you have obtained an API key you will be able to use it by defining an **`apiKey`** property within the [[configuration|Configuration#introduction]].
 
-* Using [Google Maps API for Work](https://developers.google.com/maps/documentation/business/)? Then you do not need an API key anymore, but a [client ID](https://developers.google.com/maps/documentation/business/clientside/#client_id). As for API key, you would put this one in the [[configuration|Configuration#introduction]], but in a **`clientId`** property.
+* If you are using the [Google Maps API for Work](https://developers.google.com/maps/documentation/business/) then you no longer need an API key. Instead you will need a [client ID](https://developers.google.com/maps/documentation/business/clientside/#client_id). You will need to add your clientId to the [[configuration|Configuration#introduction]] by defining the **`clientId`** property.
 
 
 ## Lazy loading
