@@ -260,6 +260,12 @@ The `googleEvents` is a hash with each key being the name of the event to listen
 - **`target`** (`Object`): the target used to send the action or context of the method to call
 - **`action`** (`string`): the name of the action to send
 - **`method`** (`string` or `Function`): the name or method to call, ignored if `action` is defined, default to the name of the event
+- **`prepend`** (`boolean`): whether to prepend arguments with the event name or not - by default, it's automatically prepended when it's a method, but not when it's an action
+
+The action method, or simple method will be called with:
+- **`name`** (`string`): the event name if `prepend` is `true` or if it's undefined and it's not an action
+- **`target`** (`Ember.Object`): the Ember target of the event
+- **`event`** (`Object`): the event object
 
 ### Example use-case: responding to events
 

@@ -85,11 +85,11 @@ Now it's time to add some overlay objects in your map. We'll create a fake model
 
     export default Ember.Route.extend({
       model: function() {
-        return [
+        return Ember.A([
           {title: "Home", lat: 14.766127, lng: 102.810987, body: "Here is B&H's home"},
           {title: "Shop", lat: 14.762963, lng: 102.812285, body: "Here is B&H's shop", isInfoWindowVisible: true},
           {title: "Hay's", lat: 14.762900, lng: 102.812018, body: "Here is Hay's shop"}
-        ];
+        ]);
       }
     });
     ```
@@ -155,4 +155,53 @@ We also want to have the polyline being editable, so that you can see the powerf
 
 You could also add `{{polylinesArray.firstObject.path.length}}` in the `application` template to follow the number of points making the polyline's path, and look at it changing when you create more edges by dragging the faded white spots in the middle of existing edges on the map.
 
+
 ## Answering Google events
+
+We are going here to duplicate a marker when the user right clicks on it. We need to create and extend the default marker view so that we can listen to the `rightclick` event.
+
+1. **Create our extended marker view so we can listen to events. In the terminal, type:**
+
+    ```bash
+    ember g view map/marker
+    ```
+
+    then edit `app/views/marker.js` so that it looks lik this:
+
+    ```js
+    import GoogleMapMarkerView from '../google-map/marker';
+
+    export default GoogleMapMarkerView.extend({
+      googleEvents: { rightclick: 'duplicateMarker' }
+    });
+    ```
+
+2. **Add the `markerViewClass` property to the `application` template where we call `{{google-map...}}`:**
+
+    ```handlebars
+    {{google-maps markerViewClass='map/marker'
+                  ...}}
+    ```
+
+3. **Create the `duplicateMarker` action in the `application` controller. Add this at the end of `app/controllers/application.js`:**
+
+    ```js
+      actions: {
+        duplicateMarker: function (target) {
+          var newMarker, marker;
+          // the ember target is the view, so our marker is the model of the controller for that view
+          marker = target.get('controller.model');
+          // we copy the marker
+          newMarker = Ember.getProperties(marker, Ember.keys(marker));
+          // add 0.0002 to its coordinates
+          newMarker.lat += 0.0002;
+          newMarker.lng += 0.0002;
+          // and insert it right before the copied marker
+          this.insertAt(this.indexOf(marker) + 1, newMarker);
+          // stop propagation so that the context menu doesn't show-up
+          return false;
+        }
+      }
+    ```
+
+4. **Finally start `ember serve` if you had stopped it, else just go to http://localhost:4200 and to check it out**
