@@ -53,7 +53,7 @@ Any drawable object (also called _overlay_ by Google) of the map has its corresp
 
 #### Markers
 <img align="right" src="assets/marker.png" height="100">
-- Google type: [google.maps.Marker](https://developers.google.com/maps/documentation/javascript/reference#Marker)
+Google type: [google.maps.Marker](https://developers.google.com/maps/documentation/javascript/reference#Marker)
 - Component property: **`markers`**
 - Events: **`click`**, **`dblclick`**, **`drag`**, **`dragend`**, **`dragstart`**, **`mousedown`**, **`mouseout`**, **`mouseover`**, **`mouseup`** and **`rightclick`**
 - Special component properties:
@@ -132,7 +132,7 @@ Any drawable object (also called _overlay_ by Google) of the map has its corresp
 **Each polyline has these properties:**
 - **`lat`** and **`lng`**: coordinates of the polyline, **mandatory**
 - **`path`** (`Array.<{lat: number, lng: number}>`): path of the polyline (each item represent a point of the path), **mandatory**
-- **`icons`** ([`Array.<IconSequence>`](https://developers.google.com/maps/documentation/javascript/reference#IconSequence)): the icons to be rendered along the polyline
+- **`icons`** ([`Array.<google.maps.IconSequence>`](https://developers.google.com/maps/documentation/javascript/reference#IconSequence)): the icons to be rendered along the polyline
 - **`isClickable`** (`boolean`): whether the polyline is clickable or not
 - **`isVisible`** (`boolean`): whether the polyline is visible or not
 - **`isDraggable`** (`boolean`): whether the polyline is draggable or not
@@ -156,7 +156,7 @@ Any drawable object (also called _overlay_ by Google) of the map has its corresp
 **Each polygon has these properties:**
 - **`lat`** and **`lng`**: coordinates of the polygon, **mandatory**
 - **`path`** (`Array.<{lat: number, lng: number}>`): path of the polygon (each item represent a point of the path), **mandatory**
-- **`icons`** ([`Array.<IconSequence>`](https://developers.google.com/maps/documentation/javascript/reference#IconSequence)): the icons to be rendered along the polygon
+- **`icons`** ([`Array.<google.maps.IconSequence>`](https://developers.google.com/maps/documentation/javascript/reference#IconSequence)): the icons to be rendered along the polygon
 - **`isClickable`** (`boolean`): whether the polygon is clickable or not
 - **`isVisible`** (`boolean`): whether the polygon is visible or not
 - **`isDraggable`** (`boolean`): whether the polygon is draggable or not
