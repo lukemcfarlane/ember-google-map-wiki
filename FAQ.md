@@ -1,8 +1,8 @@
-### 1. Why `{{google-map markers=m lat=m.firstObject.lat ...}}` fails?
+### 1. Why does `{{google-map markers=m lat=m.firstObject.lat ...}}` fail?
 
-Remember that bindings are 2-way bindings, so when you're going to drag the map or zoom with the mouse wheel, the center coordinates, ie the ones at `lat` and `lng`, will change, and so it'll change here the `lat` of the first marker too, ending in an infinite loop trying to synchronize bindings.
+Remember that the bindings used within this add on are 2-way. When you drag the map or zoom with the mouse wheel the center coordinates -- the ones at `lat` and `lng` -- will change. Then in our example the `lat` of the first marker will also be changed, resulting in an infinite loop while trying to synchronize bindings.
 
-If you need to synchronize the center with the `lat` and `lng` of the first marker, or info-window, or whatever overlay object, creating a one way binding in your controller:
+If you need to synchronize the center with the `lat` and `lng` of the first marker, an info-window, or any  overlay object, create a one way binding in your controller:
 
 ```js
   //...
@@ -19,12 +19,12 @@ and use that in your template instead:
 
 ### 2. How can I handle Google events on overlays?
 
-Refer the [[Events|Provided-Tools-and-Classes-(API)#events]] section of the API or even the [[Answering Google events|Examples#answering-google-events]] section of the example.
+Refer to the [[Events|Provided-Tools-and-Classes-(API)#events]] section of the API and the [[Responding to Google events|Examples#responding-to-google-events]] section of the example.
 
 
-### 3. Getting `ERROR: markerViewClass must be a subclass or an instance of Ember.View` error, what's wrong?
+### 3. I am receiving the `ERROR: markerViewClass must be a subclass or an instance of Ember.View` error. What's wrong?
 
-Since 0.0.14 you'll need EmberJS >= `1.9`. Refer to the [[Requirements|Installation#requirements]] section of the installation docs.
+Starting with version `0.0.14` of this add on and onward you will need Ember.js >= `1.9`. Please refer to the [[Requirements|Installation#requirements]] section of the installation docs.
 
 
-### Having another question/issue? Ask me here creating a new issue or on twitter [@huafu_g](https://twitter.com/huafu_g).
+### Have another question or issue? Ask me here by creating a new issue or contact me on twitter [@huafu_g](https://twitter.com/huafu_g).
