@@ -7,6 +7,12 @@
     cd google-map-demo
     ```
 
+    then follow the steps [there](http://emberjs.com/blog/2014/12/08/ember-1-9-0-released.html#toc_handlebars-2-0) to update your Handlebars version, and update your bower `ember` package to 1.9.1 or up with:
+
+    ```bash
+    bower install --save ember#1.9.1
+    ```
+
 2. Go edit the application template (at `app/templates/application.hbs`) and replace it with:
 
     ```handlebars
