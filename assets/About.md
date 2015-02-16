@@ -2,7 +2,7 @@
 
 My name is Huafu Gandon. I am a french dude who grew up in Paris, traveled around the World from 2009 to 2012 and then settled with my family in the middle of nowhere in the countryside of Isaan, a province of Thailand.
 
-You can find my yet incomplete but existing website at [huafu.github.io](http://huafu.github.io).
+You can find my yet complete but existing website at [huafu.github.io](http://huafu.github.io).
 
 
 ### Contributors
