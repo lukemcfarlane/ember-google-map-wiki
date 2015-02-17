@@ -272,7 +272,7 @@ The action method, or simple method will be called with:
 - **`target`** (`Ember.Object`): the Ember target of the event
 - **`event`** (`Object`): the event object
 
-For the sake of clarity, here is a bit more about the events. Events can either 1) send an ember action or 2) call a method/function. By default the target of an event if the controller holding the google-map component. If a different target is given, `target.send(<action>, ..)` will be called if `action` is defined and `target.method(...)` will be called if `method` is defined instead.
+For the sake of clarity, here is a bit more about the events. Events can either 1) send an ember action or 2) call a method/function. By default the target of an event is the controller holding the `google-map` component. If a different target is given, `target.send(<action>, ..)` will be called if `action` is defined and `target.method(...)` will be called if `method` is defined instead.
 
 - When using an action:
     * If `prepend` is set to `true` the arguments will be: `(<event-name>, <ember-object-where-googleEvents-is-defined>, <event>)`
