@@ -15,7 +15,7 @@ ember install:addon ember-google-map
 
 from within your application folder.
 
-If you have an old version of `ember-cli`, you'll get an error and will need to run this instead:
+If you have an old version of `ember-cli` (prior to `0.1.5`), you'll get an error and will need to run this instead:
 
 ```bash
 npm install --save-dev ember-google-map
