@@ -272,6 +272,16 @@ The action method, or simple method will be called with:
 - **`target`** (`Ember.Object`): the Ember target of the event
 - **`event`** (`Object`): the event object
 
+For the sake of clarity, here is a bit more about the events. Events can either 1) send an ember action or 2) call a method/function. By default the target of an event if the controller holding the google-map component. If a different target is given, `target.send(<action>, ..)` will be called if `action` is defined and `target.method(...)` will be called if `method` is defined instead.
+
+- When using an action:
+    * If `prepend` is set to `true` the arguments will be: `(<event-name>, <ember-object-where-googleEvents-is-defined>, <event>)`
+    * If `prepend` is not set or it is set to `false` the arguments sent will be: `(<ember-object-where-googleEvents-is-defined>, <event>)`
+
+- When using a method/function:
+    * If `prepend` is not set or `prepend` is set to `true`, the arguments will beL `(<event-name>, <ember-object-where-googleEvents-defined>, <event>)`
+    * If `prepend` is set to `false` the arguments will be: `(<ember-object-where-googleEvents-defined>, <event>)`
+
 ### Example use-case: responding to events
 
 Let's say you want to handle the `click` event on your circles to send the `didClick` Ember action (as if `{{action 'didClick'}}`) was thrown from a template. To achieve this you'll need to:
