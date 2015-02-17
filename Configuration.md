@@ -28,7 +28,7 @@ ENV.googleMap = {
 
 By default, the Google Maps library will load automatically when your application starts. If you prefer to defer loading it until the first time a map is required, then you can disable auto-loading by defining a **`lazyLoad`** property in the [[configuration|Configuration#introduction]] and setting **`lazyLoad`** to  `true`.
 
-If you are using lazy-loading then you'll need to ensure that the Google Maps library is loaded for each route  that has a template using the `{{google-map}}` component. The Google Maps library can be lazy-loaded in a parent of the route using the map component. For instance, if you have a `user.travels.map` route, you can lazy load the Google Maps library in the `user.travels.map` route, `users.travels` route or `users` route. This is useful in scenarios where you would otherwise have to lazy-load the library in multiple places, for instance if you have a the routes `users.travels.map` and `users.travel.all`, you can lazy load the library in the  `user.travels` route alone. A helper method **`loadGoogleMap`** has been injected in all routes so that you can load the library:
+If you are using lazy-loading then you'll need to ensure that the Google Maps library is loaded for each route  that has a template using the `{{google-map}}` component. A helper method **`loadGoogleMap`** has been injected in all routes so that you can load the library:
 
 ```js
 export default Ember.Route.extend({
@@ -50,6 +50,7 @@ export default Ember.Route.extend({
 });
 ```
 
+The Google Maps library can be lazy-loaded in a parent of the route using the map component. For instance, if you have a `user.travels.map` route, you can lazy load the Google Maps library in the `user.travels.map` route, `users.travels` route or `users` route. This is useful in scenarios where you would otherwise have to lazy-load the library in multiple places. If you have the routes `users.travels.map` and `users.travel.all`, for instance, you can lazy load the library in the `user.travels` route alone.
 
 ## Loading additional Google libraries
 
