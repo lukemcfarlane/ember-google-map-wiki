@@ -279,7 +279,7 @@ For the sake of clarity, here is a bit more about the events. Events can either 
     * If `prepend` is not set or it is set to `false` the arguments sent will be: `(<ember-object-where-googleEvents-is-defined>, <event>)`
 
 - When using a method/function:
-    * If `prepend` is not set or `prepend` is set to `true`, the arguments will beL `(<event-name>, <ember-object-where-googleEvents-defined>, <event>)`
+    * If `prepend` is not set or `prepend` is set to `true`, the arguments will be `(<event-name>, <ember-object-where-googleEvents-defined>, <event>)`
     * If `prepend` is set to `false` the arguments will be: `(<ember-object-where-googleEvents-defined>, <event>)`
 
 ### Example use-case: responding to events
