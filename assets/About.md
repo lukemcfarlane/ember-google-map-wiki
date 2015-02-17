@@ -10,3 +10,5 @@ You can find my yet complete but existing website at [huafu.github.io](http://hu
 For now only README issues and a little config addition have been contributed to, but I'd like to put the list of contributors here anyway. You can find this list [here](https://github.com/huafu/ember-google-map/graphs/contributors).
 
 Thanks to everyone who reported issues and asked for features.  You have helped get this great add-on where it is at now, so I'd like to thank you too!
+
+Also special thanks to [Oren Hizkiyaohizkiya](https://github.com/ohizkiya) who helps a lot keeping this wiki texts in better English than mine ;-)
