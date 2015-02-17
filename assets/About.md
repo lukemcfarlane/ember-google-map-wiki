@@ -11,4 +11,4 @@ For now only README issues and a little config addition have been contributed to
 
 Thanks to everyone who reported issues and asked for features.  You have helped get this great add-on where it is at now, so I'd like to thank you too!
 
-Also special thanks to [Oren Hizkiyaohizkiya](https://github.com/ohizkiya) who helps a lot keeping this wiki texts in better English than mine ;-)
+Also special thanks to [Oren Hizkiya](https://github.com/ohizkiya) who helps a lot keeping this wiki texts in better English than mine ;-)
