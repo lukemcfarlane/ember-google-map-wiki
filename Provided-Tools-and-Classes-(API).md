@@ -23,7 +23,7 @@ All of the other attributes of the map are defined as properties. Each of these 
 
     How zoomed in the map is. Zoom must be a `number` between `0` and `18` but it is limited depending on the type of map you're using. See the [Google Documentation](https://developers.google.com/maps/documentation/javascript/maxzoom).
 
-- **`fitBoundsArray`** (type: `Array.<{lat: number, lng: number}>`, default value: _automatic depending on `autoFitBounds`_)
+- **`fitBoundsArray`** (type: `Array.<{lat: number, lng: number}>`, default value: _automatically calculated depending on the value of `autoFitBounds`_)
 
     An array of objects containing `lat` and `lng` coordinates. All of the points within the array will be used to center and zoom the map so that it can render all of the given positions within the google map canvas. Do not set this if you have defined `autoFitBounds` to something else than `false` (see below).
 
