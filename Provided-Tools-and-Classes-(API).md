@@ -48,6 +48,8 @@ For example, to disable the zoom controls (Google Maps option named `zoomControl
 
 Any [[view|Provided-Tools-and-Classes-(API)#views]] corresponding to a Google Maps object can also be bound to an option provided by Google in the same manner. Refer to the [Google Maps documentation](https://developers.google.com/maps/documentation/javascript/reference) for possible settings.
 
+Note that any Google Maps options that are set using property names prefaced with `gopt_` will be read only after initialization.
+
 
 ### Defining objects to draw
 
