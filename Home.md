@@ -16,7 +16,7 @@ EmberJS Google Map
 * [[Loading additional Google libraries|Configuration#loading-additional-google-libraries]]
 
 #### [[Provided Tools and Classes (API)]]
-* [[Main {{google-map}} component|Provided-Tools-and-Classes-(API)#main-google-map-component]]
+* [[The main {{google-map}} component|Provided-Tools-and-Classes-(API)#the-main-google-map-component]]
     - [[Basic properties|Provided-Tools-and-Classes-(API)#basic-properties]]
     - [[Google options as properties|Provided-Tools-and-Classes-(API)#google-options-as-properties]]
     - [[Defining objects to draw|Provided-Tools-and-Classes-(API)#defining-objects-to-draw]]
