@@ -194,7 +194,7 @@ export default GoogleMapMarkerController.extend({
 
 Each overlay object type has a controller which is used as the `itemController` for the associated array of objects. These controllers are named in line with their object types extend `Ember.ObjectController`.
 
-The `polylines` and `polygons` each have an additional path controller (`google-map/polyline-path` and `google-map/polygon-path`). The `polyline-path` and `polygon-path` controllers each extend `Ember.ArrayController` so that you can handle their paths separately.
+The `polylines` and `polygons` each have an additional path controller (`google-map/polyline-path` and `google-map/polygon-path`). The `polyline-path` and `polygon-path` controllers each extend `Ember.ArrayController` so that you can handle the behavior of their paths, for instance if you wanted to listen for changes along an entire path or if you wanted to round values of a path, etc.
 
 Here is the list of all controllers created by the add-on. Each of them is injected into the path `app/controllers/google-map`:
 - **`marker`**
