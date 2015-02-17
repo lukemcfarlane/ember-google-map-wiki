@@ -2,7 +2,7 @@
 - [[Installation]]
 - [[Configuration]]
 - [[API|Provided Tools and Classes (API)]]
-    - [[{{google-map}}|Provided-Tools-and-Classes-(API)#main-google-map-component]]
+    - [[{{google-map}}|Provided-Tools-and-Classes-(API)#the-main-google-map-component]]
         - [[markers|Provided-Tools-and-Classes-(API)#markers]]
         - [[info-windows|Provided-Tools-and-Classes-(API)#info-windows]]
         - [[circles|Provided-Tools-and-Classes-(API)#circles]]
