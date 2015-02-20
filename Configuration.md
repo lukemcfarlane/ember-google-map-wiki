@@ -18,7 +18,7 @@ ENV.googleMap = {
 ```
 
 ## Google API version
-* By default, the component uses version 3 of the API, but you may select a specific revision by using the `version` attribute.
+* By default, the component uses version 3 of the API, but you may select a specific revision with the `version` property.
 
 ## Google API key or Client ID
 
