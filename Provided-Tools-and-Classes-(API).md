@@ -29,8 +29,6 @@ All of the other attributes of the map are defined as properties. Each of these 
 
 - **`autoFitBounds`** (type: `boolean` or `string`, default value: `false`)
 
-`autoFitBounds` can either be a `boolean or a string`.
-
     If it is a `boolean`, setting `autoFitBounds` to `false` will do nothing. If `autoFitBounds` is set to `true` it will automatically center and zoom the map so that all of the [[objects you defined on the map|Provided-Tools-and-Classes-(API)#defining-objects-to-draw]] will be visible.
 
     If it is a `string`, `autoFitBounds` should contain a list of the type of objects which will all be fit onto the map. Providing a list of the types of objects to fit on the map, will cause the component to behave similarly to if you had set `autoFitBounds` to `true`, except the map will only zoom and focus to accommodate objects of the given type(s) . For example, providing a value of `markers,circles` would center and zoom the map so that all markers and circle are visible, but would not try to ensure that other objects (such as `polylines` or 'polygons') are within the map's bounds. Valid types to be included in the list of object types are: `markers`, `infoWindows`, `circles`, `polylines` and `polygons`.
