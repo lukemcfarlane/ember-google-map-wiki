@@ -17,6 +17,9 @@ ENV.googleMap = {
 }}
 ```
 
+## Google API version
+* By default, the component uses version 3 of the API, but you may select a specific revision by using the `version` attribute.
+
 ## Google API key or Client ID
 
 * Using the Google Maps API doesn't require an API key, but Google recommends creating and using one. To create a new API key, go to [this link](https://developers.google.com/maps/documentation/javascript/tutorial#api_key). Once you have obtained an API key you will be able to use it by defining an **`apiKey`** property within the [[configuration|Configuration#introduction]].
