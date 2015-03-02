@@ -304,6 +304,37 @@ Let's say you want to handle the `click` event on your circles to send the `didC
 
 ...and the `didClick` action will be sent when a circle is clicked.
 
+### Styles
+
+Google provides the ability to define custom styles for the map on an option called `styles`. As explained above, this can be set with the `gopt_styles` component property.
+
+For example, in your view (let say `app/views/map.js`) define the `mapStyles` property:
+
+```javascript
+import Ember from 'ember';
+
+export default Ember.View.extend({
+  mapStyles: [
+    {
+      featureType: "poi.business",
+      elementType: "labels",
+      stylers: [
+        { visibility: "off" }
+      ]
+    }
+  ]
+});
+```
+
+And then in your template (file `app/templates/map.hbs`):
+
+```handlebars
+{{google-map ... gopt_styles=view.mapStyles}}
+```
+
+Find the full Google Maps documentation on styles [here](https://developers.google.com/maps/documentation/javascript/styling).
+
+
 ### Accessing the Google map object (not recommended)
 
 **This is strongly not recommended**, but if you really need to access the Google Maps core `map` object, you can bind the `map` property to your view and then it will be accessible from that view:
