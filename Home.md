@@ -34,6 +34,7 @@ EmberJS Google Map
     - [[Available views|Provided-Tools-and-Classes-(API)#available-views]]
     - [[Events|Provided-Tools-and-Classes-(API)#events]]
     - [[Example use-case: responding to events|Provided-Tools-and-Classes-(API)#example-use-case-responding-to-events]]
+    - [[Styling|Provided-Tools-and-Classes-(API)#styling]]
     - [[Accessing the Google map object (not recommended)|Provided-Tools-and-Classes-(API)#accessing-the-google-map-object]]
 
 #### [[Examples]]
