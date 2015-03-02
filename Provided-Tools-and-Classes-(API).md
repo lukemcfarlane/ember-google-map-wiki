@@ -304,7 +304,7 @@ Let's say you want to handle the `click` event on your circles to send the `didC
 
 ...and the `didClick` action will be sent when a circle is clicked.
 
-### Styles
+### Styling
 
 Google provides the ability to define custom styles for the map on an option called `styles`. As explained above, this can be set with the `gopt_styles` component property.
 
