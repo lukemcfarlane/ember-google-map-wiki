@@ -10,6 +10,7 @@
         - [[polygons|Provided-Tools-and-Classes-(API)#polygons]]
     - [[controllers|Provided-Tools-and-Classes-(API)#controllers]]
     - [[views|Provided-Tools-and-Classes-(API)#views]]
+        - [[styling|Provided-Tools-and-Classes-(API)#styling]]
 - [[Examples]]
 - [[FAQ]]
 - [[About]]
