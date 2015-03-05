@@ -63,7 +63,7 @@ Each type of drawable object (objects which Google calls _overlay_s) that can be
     - **`markerController`**: name of the controller to use for each marker, must extend `google-map/marker` controller
     - **`markerViewClass`**: name or class of the view to use for each marker, must extend `google-map/marker` view
     - **`markerInfoWindowTemplateName`**: name of the template to use for all marker info-windows
-    - **`markerHasInfoWindow`**: whether without defined `hasInfoWindow` properties should have an info-window or not
+    - **`markerHasInfoWindow`**: the default `hasInfoWindow` value if not set for each marker (see below)
 
 **Each marker has these properties:**
 
