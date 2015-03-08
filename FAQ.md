@@ -26,22 +26,20 @@ Refer to the [[Events|Provided-Tools-and-Classes-(API)#events]] section of the A
 
 Starting with version `0.0.14` of this add on and onward you will need Ember.js >= `1.9`. Please refer to the [[Requirements|Installation#requirements]] section of the installation docs.
 
-### 4. Why am I'm getting errors in my console?
+### 4. What are those content security policy errors in my console?
 
-If you are using ember-cli you will need to setup [Content Security Policies](https://github.com/rwjblue/ember-cli-content-security-policy) allowing the correct domains.
+You need to setup [Content Security Policies](https://github.com/rwjblue/ember-cli-content-security-policy) allowing the correct domains.
 
-Add the following security policy to your `config/environment.js` file to stop the warnings:
+Add the following security policy to your `config/environment.js` file:
 
 ```javascript
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
-    // Allow scripts
-    'script-src': "'self' 'unsafe-eval' http://*.googleapis.com http://maps.gstatic.com",
-    'font-src': "'self' http://fonts.gstatic.com", // Allow fonts
-    'connect-src': "'self' http://maps.gstatic.com", // Allow data (ajax/websocket)
-    'img-src': "'self' http://*.googleapis.com http://maps.gstatic.com http://csi.gstatic.com",
-    // Allow inline styles and loaded CSS
-    'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://maps.gstatic.com"
+    'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com",
+    'font-src': "'self' fonts.gstatic.com",
+    'connect-src': "'self' maps.gstatic.com",
+    'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com",
+    'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
   };
 ````
 
