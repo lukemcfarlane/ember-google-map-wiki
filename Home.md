@@ -11,6 +11,7 @@ EmberJS Google Map
 * [[Install the addon|Installation#install-the-addon]]
 
 #### [[Configuration]]
+* [[Content Security Policy|Configuration#configuring-your-content-security-policy]]
 * [[Google API key or Client ID|Configuration#google-api-key-or-client-id]]
 * [[Lazy loading|Configuration#lazy-loading]]
 * [[Loading additional Google libraries|Configuration#loading-additional-google-libraries]]
