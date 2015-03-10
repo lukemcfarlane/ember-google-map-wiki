@@ -32,4 +32,6 @@ You need to setup [Content Security Policies addon](https://github.com/rwjblue/e
 
 Refer to the [[Content Security Policy|Configuration#configuring-your-content-security-policy]] section of the configuration page to setup it correctly.
 
+
+---
 ### Have another question or issue? Ask me here by creating a new issue or contact me on twitter [@huafu_g](https://twitter.com/huafu_g).
