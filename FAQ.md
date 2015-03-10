@@ -28,19 +28,8 @@ Starting with version `0.0.14` of this add on and onward you will need Ember.js 
 
 ### 4. What are those content security policy errors in my console?
 
-You need to setup [Content Security Policies](https://github.com/rwjblue/ember-cli-content-security-policy) allowing the correct domains.
+You need to setup [Content Security Policies addon](https://github.com/rwjblue/ember-cli-content-security-policy) allowing the correct domains.
 
-Add the following security policy to your `config/environment.js` file:
-
-```javascript
-  ENV.contentSecurityPolicy = {
-    'default-src': "'none'",
-    'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com",
-    'font-src': "'self' fonts.gstatic.com",
-    'connect-src': "'self' maps.gstatic.com",
-    'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com",
-    'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
-  };
-````
+Refer to the [[Content Security Policy|Configuration#configuring-your-content-security-policy]] section of the configuration page to setup it correctly.
 
 ### Have another question or issue? Ask me here by creating a new issue or contact me on twitter [@huafu_g](https://twitter.com/huafu_g).
