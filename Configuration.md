@@ -17,6 +17,22 @@ ENV.googleMap = {
 }}
 ```
 
+## Configuring your Content Security Policy
+In order to avoid errors in the console, you will need to setup [Content Security Policies](https://github.com/rwjblue/ember-cli-content-security-policy) allowing the correct domains.
+
+Add the following security policy to your `config/environment.js` file:
+
+```javascript
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com",
+    'font-src': "'self' fonts.gstatic.com",
+    'connect-src': "'self' maps.gstatic.com",
+    'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com",
+    'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
+  };
+````
+
 ## Google API version
 * By default, the component uses version 3 of the API, but you may select a specific revision with the `version` property.
 
