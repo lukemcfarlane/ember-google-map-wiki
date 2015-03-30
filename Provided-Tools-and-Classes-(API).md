@@ -122,7 +122,7 @@ Each type of drawable object (objects which Google calls _overlay_s) that can be
 - **`fillOpacity`** (`number`): opacity of the circle's fill (read-only after creation)
 - **`zIndex`** (`number`): z-index of the circle
 
-#### Polyline
+#### Polylines
 <img align="right" src="assets/polyline.png" height="100">
 - Google type: [google.maps.Polyline](https://developers.google.com/maps/documentation/javascript/reference#Polyline)
 - Component property: **`polylines`**
@@ -146,7 +146,7 @@ Each type of drawable object (objects which Google calls _overlay_s) that can be
 - **`strokeWeight`** (`number`): weight of the polyline's stroke (read-only after creation)
 - **`zIndex`** (`number`): z-index of the polyline
 
-#### Polygon
+#### Polygons
 <img align="right" src="assets/polygon.png" height="100">
 - Google type: [google.maps.Polygon](https://developers.google.com/maps/documentation/javascript/reference#Polygon)
 - Component property: **`polygons`**
