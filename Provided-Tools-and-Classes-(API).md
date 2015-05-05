@@ -49,6 +49,13 @@ Any [[view|Provided-Tools-and-Classes-(API)#views]] corresponding to a Google Ma
 Note that any Google Maps options that are set using property names prefaced with `gopt_` will be read only after initialization.
 
 
+### Send action on Google event
+
+You can trigger Ember action easily on any Google event. For this, simply define the name of the action to be called when an event is triggered on the component: `ev_[eventName]=[actionName]` where `[eventName]` has to be replaced with the name of the event you want to handle (like `click`), and `[actionName]` has to be replaced with the name of the action you want to send when that event occurs.
+
+The action method (defined by default on the controller holding the component) will then receive the `view` which triggered the event (in our case here the instance of the component), and any other arguments will be the arguments Google will give on that event (usually the `event` itself).
+
+
 ### Defining objects to draw
 
 
