@@ -5,7 +5,7 @@
     ```bash
     ember new google-map-demo
     cd google-map-demo
-    ember install:addon ember-google-map
+    ember install ember-google-map
     ```
 
     then follow the steps [here](http://emberjs.com/blog/2014/12/08/ember-1-9-0-released.html#toc_handlebars-2-0) to update your version of Handlebars. Update your bower `ember` package to 1.9.1 or above with:
