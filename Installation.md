@@ -10,7 +10,7 @@ EmberJS `1.9` or above is not the version of Ember installed by default with new
 To install the `ember-google-map` addon in your application, simply run
 
 ```bash
-ember install:addon ember-google-map
+ember install ember-google-map
 ```
 
 from within your application folder.
