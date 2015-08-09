@@ -103,12 +103,12 @@ Now it's time to add some overlay objects to your map. We'll create a fake model
     and then edit `app/templates/map/info-window.hbs` so that it looks like this:
 
     ```handlebars
-    <strong>{{title}}</strong>
-    <p>{{body}}</p>
+    <strong>{{model.title}}</strong>
+    <p>{{model.body}}</p>
     <p>
       Coordinates:<br>
       <small>
-        <code>{{lat}}</code>,<code>{{lng}}</code>
+        <code>{{model.lat}}</code>,<code>{{model.lng}}</code>
       </small>
     </p>
     ```
