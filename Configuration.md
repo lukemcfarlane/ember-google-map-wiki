@@ -42,6 +42,18 @@ Add the following security policy to your `config/environment.js` file:
 
 * If you are using the [Google Maps API for Work](https://developers.google.com/maps/documentation/business/) then you no longer need an API key. Instead you will need a [client ID](https://developers.google.com/maps/documentation/business/clientside/#client_id). You will need to add your clientId to the [[configuration|Configuration#introduction]] by defining the **`clientId`** property.
 
+## Channel
+
+To provide additional detail in your reports, you can optionally specify a [channel](https://developers.google.com/maps/documentation/business/clientside/load#channel_reporting).
+
+#### Example:
+
+```js
+ENV.googleMap = {
+  clientId: 'clientid',
+  channel: 'my-app-name'
+}}
+```
 
 ## Lazy loading
 
